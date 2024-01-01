@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "780563715048",
+    "project_id": "agribaito",
+    "storage_bucket": "agribaito.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:780563715048:android:51ffd58ccb01352004ca5d",
+        "android_client_info": {
+          "package_name": "com.example.agribaito"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2T462E1MlxWA5rTVjwQE15JLzZIKM31E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
