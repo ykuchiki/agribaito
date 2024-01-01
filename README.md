@@ -34,6 +34,11 @@ git commit -m "ここに変更した内容を一言書いてください
 以上です，お疲れまでした．
 
 ## その他
+アプリを実行するとき
+```
+flutter run -d chrome
+```
+
 最新のmainブランチの内容をこまめに取得しましょう
 ```
 git pull origin main
