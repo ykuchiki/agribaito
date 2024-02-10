@@ -1,6 +1,5 @@
 import "package:flutter/material.dart";
 import "package:firebase_core/firebase_core.dart";
-import "firebase_options.dart";
 import "package:flutter_dotenv/flutter_dotenv.dart";
 
 import "package:agribaito/mypage.dart";
@@ -12,7 +11,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load();
 
-  print('API Key: ${dotenv.env['ANDROID_FIREBASE_API_KEY']}');
 
   await Firebase.initializeApp(
     options: FirebaseOptions(
@@ -31,9 +29,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context){
     return MaterialApp(
       title: "AgriBaito",
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
       home: Home(),
     );
   }
+}
+
+// BottomNavigationBarItemのスタイルをカスタマイズ
+BottomNavigationBarItem _buildBottomNavItem(IconData icon, String label) {
+  return BottomNavigationBarItem(
+    icon: Icon(icon, size: 30),
+    label: label,
+  );
 }
 
 class Home extends StatefulWidget{
@@ -55,10 +65,10 @@ class _HomeState extends State<Home>{
       body: display[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.note_alt), label: "勉強"),
-          BottomNavigationBarItem(icon: Icon(Icons.travel_explore), label: "応募一覧"),
-          BottomNavigationBarItem(icon: Icon(Icons.people), label:"マイページ"),
-          BottomNavigationBarItem(icon: Icon(Icons.science), label:"求人ページ(仮)"),
+          _buildBottomNavItem(Icons.note_alt, "勉強"),
+          _buildBottomNavItem(Icons.travel_explore, "応募一覧"),
+          _buildBottomNavItem(Icons.people, "マイページ"),
+          _buildBottomNavItem(Icons.science, "求人ページ(仮)"),
         ],
         // 現在選択されているフッターメニューのインデックス
         currentIndex: selectedIndex,
